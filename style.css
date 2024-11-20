@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/**** ESTRUCTURA ****/
+body {
+    background-color: black;
+
+}
+/* BOTON + INPUT */
+.boton {
+    font-size: x-large;
+    border-radius: 100px;
+    background-image: url(img/istockphoto-1354046004-612x612.jpg);
+    background-size: cover;
+
+    padding: 3%;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    color: transparent;
+    
+    box-shadow: 0px 0px 10px cyan,
+        0px 0px 20px cyan,
+        0px 0px 30px cyan,
+        0px 0px 40px cyan;
+}
+
+#input{
+    width: 100px;
+    border-radius: 50px;
+    padding: 10px;
+    font-size: small;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+
+}
+.box-button {
+    display: grid;
+    place-items: center;
+}
+
+/*** BINGO ***/
+
+/* 10x10 */
+
+.bingo {
+    border: white solid;
+    display: grid;
+    width: auto;
+    height: auto;
+    align-content: center;
+    justify-content: center;
+}
+
+.tabla {
+    width: 35%;
+    align-items: center;
+    height: 100%;
+    margin: auto;
+}
+
+.tabla table {
+    box-shadow: inset 0 -3px 5px greenyellow,
+                inset 0 3px 3px green,
+                0 5px 10px greenyellow;
+    margin-left: 20px;
+    margin: auto;
+}
+
+.tabla td {
+    color: white;
+    width: 35px;
+    max-width: 40px;
+    height: 35px;
+    max-height: 40px;
+    font-size: medium;
+    box-shadow: inset 0px 2px 5px cadetblue;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    transition: background-color 0.5s ease-in-out;
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+}
+
+/* CARTONES  */
+.juego {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(1, 1fr); /* Por defecto, 2 columnas */
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Para pantallas grandes (ancho mayor a 768px) */
+@media (min-width: 500px) {
+    .juego {
+        grid-template-columns: repeat(2, 1fr); /* Cambia a 3 columnas */
+    }
+}
+
+
+/* Para pantallas grandes (ancho mayor a 768px) */
+@media (min-width: 1024px) {
+    .juego {
+        grid-template-columns: repeat(3, 1fr); /* Cambia a 3 columnas */
+    }
+}
+
+
+.carton {
+    margin-right: none;
+    height: 70px;
+    width: 85%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.carton td {
+    color: white;
+    height: 20px;
+    width: 50px;
+    font-size: medium;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    transition: background-color 1s ease-in-out;
+    /*background: rgba(255, 255, 255, 0.2);  Fondo semitransparente */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+}
+
+legend{
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: large;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+/* COLORES DE ADORNO */
+
+.marcado {
+    background-color: green;
+}
+
+.linea {
+    background-color: rgba(255, 115, 0, 0.747);
+    font-weight: bold; 
+}
+
+.ganador td {
+    padding: 2px;
+    background-color: gold;
+    font-weight: bold;
+    color: black;
+    animation: parpadeo 1s infinite alternate;
+    border: 2px solid #ff4500;
+    box-shadow: 0 0 10px 5px rgba(255, 215, 0, 0.8);
+    text-transform: uppercase;
+}
+
+/* Animación de brillo de parpadeo */
+@keyframes parpadeo {
+    0% {
+        box-shadow:  0 0 2px 2px rgba(255, 215, 0, 0.8); /* Brillo inicial */
+    }
+    50% {
+        box-shadow:  0 0 5px 5px rgba(255, 215, 0, 1); /* Incremento del brillo */
+    }
+    100%{
+        box-shadow:  0 0 2px 2px rgba(255, 215, 0, 1); /* Incremento del brillo */
+    }
+}
